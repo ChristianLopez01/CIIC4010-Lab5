@@ -9,9 +9,6 @@ import javax.swing.JFrame;
 
 public class MyMouseAdapter extends MouseAdapter {
 	private Random generator = new Random();
-	private Color randomColor() {
-		// TODO Auto-generated method stub
-		return null;}
 	public void mousePressed(MouseEvent e) {
 		switch (e.getButton()) {
 		case 1:		//Left mouse button
@@ -80,38 +77,9 @@ public class MyMouseAdapter extends MouseAdapter {
 					} else {
 						//Released the mouse button on the same cell where it was pressed
 						if ((gridX == 0) || (gridY == 0)) {
-							if(gridX==0 && gridY==10)//colors 3x3 center randomly
-							{
-								for(int i=4;i<7;i++)
-								{
-									for (int j=4;j<7;j++)
-									{
-										myPanel.colorArray[i][j] = randomColor();
-									}
-								}
+							if(gridX==0 && gridY==10){
+								
 							}
-
-							if(gridY!=0)//paint row
-							{
-								for (int i = 1; i < myPanel.getTotalRows(); i++)
-								{
-									myPanel.colorArray[(myPanel.mouseDownGridX)+i][myPanel.mouseDownGridY] = randomColor();
-								}
-							}
-							else if(gridX!=0)//paint the columns 
-							{
-								for (int i = 1; i <myPanel.getTotalRows(); i++)
-								{
-									myPanel.colorArray[(myPanel.mouseDownGridX)][myPanel.mouseDownGridY+i] = randomColor();
-								}
-							}
-							else {
-								for (int i = 1; i < myPanel.getTotalRows(); i++)
-								{
-									myPanel.colorArray[(myPanel.mouseDownGridX)+i][myPanel.mouseDownGridY+i] = randomColor();
-								}
-							}
-							
 						} else {
 							//On the grid other than on the left column and on the top row:
 							Color newColor = null;
