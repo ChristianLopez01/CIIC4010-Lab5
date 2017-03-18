@@ -14,6 +14,8 @@ public class MyPanel extends JPanel {
 	private static final int TOTAL_ROWS = 11;   //Last row has only one cell
 	public int x = -1;
 	public int y = -1;
+	public int x2 = -1;
+	public int y2 = -1;
 	public int mouseDownGridX = 0;
 	public int mouseDownGridY = 0;
 	public Color[][] colorArray = new Color[TOTAL_COLUMNS][TOTAL_ROWS];
